@@ -7,6 +7,6 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.madlevel4task1.ShoppingListFragment"
+        android:name="com.example.madlevel4task1.view.ShoppingListFragment"
         tools:layout="@layout/fragment_shopping_list"/>
 </navigation>

@@ -1,7 +1,9 @@
-package com.example.madlevel4task1
+package com.example.madlevel4task1.database
 
 import android.content.Context
 import androidx.room.*
+import com.example.madlevel4task1.model.Product
+import com.example.madlevel4task1.dao.ProductDao
 
 @Database(entities = [Product::class], version = 1, exportSchema = false)
 abstract class ShoppingListRoomDatabase : RoomDatabase() {
@@ -19,7 +21,9 @@ abstract class ShoppingListRoomDatabase : RoomDatabase() {
                 synchronized(ShoppingListRoomDatabase::class.java) {
                     if (shoppingListRoomDatabaseInstance == null) {
                         shoppingListRoomDatabaseInstance =
-                            Room.databaseBuilder(context.applicationContext,ShoppingListRoomDatabase::class.java, DATABASE_NAME).build()
+                            Room.databaseBuilder(context.applicationContext,
+                                ShoppingListRoomDatabase::class.java, DATABASE_NAME
+                            ).build()
                     }
                 }
             }
